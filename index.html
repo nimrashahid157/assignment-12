@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>assignment 11</title>
+</head>
+<body>
+  <div class="pomodoro-box">
+    <div class="buttons">
+      <button id="focusBtn" onclick="startTimer('focus')">Focus</button>
+      <button id="breakBtn" onclick="startTimer('break')">Break</button>
+    </div>
+    <div class="timer" id="timer">25:00</div>
+    <div class="controls">
+      <span class="control-btn" onclick="toggleTimer()">&#9658;</span>
+      <span class="control-btn" onclick="restartTimer()">&#8634;</span>
+      <span class="control-btn" onclick="openSettings()">&#9881;</span>
+    </div>
+  </div>
+
+  <div id="settingsModal" class="modal">
+    <div class="modal-content">
+      <h2 class="modal-heading">Change Timing <span class="cross" onclick="goback()">&times;</span></h2>
+      <div class="options">
+        <div>
+          <label>Focus Timer:</label>
+          <input type="number" id="focusTime" placeholder="Enter minutes" min="1" value="25">
+        </div>
+        <div>
+          <label>Break Timer:</label>
+          <input type="number" id="breakTime" placeholder="Enter minutes" min="1" value="5">
+        </div>
+      </div>
+      <div class="modal-buttons">
+        <button class="reset-changes" onclick="resetChanges()">Reset Changes</button>
+        <button class="close" onclick="closeModal()">Close</button>
+        <button class="save-changes" onclick="saveChanges()">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
